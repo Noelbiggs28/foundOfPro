@@ -1,0 +1,12 @@
+.africa {
+    color:blue;
+}
+#bestHouse {
+    color:gold;
+}
+body > article > .likesToQuack{
+    color:green !important;
+}
+#rhino{
+    color:pink;
+}
