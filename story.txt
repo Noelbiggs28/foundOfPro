@@ -3,3 +3,5 @@ There was a boy playing fetch with his dog.
 there was a girl rubbing a cat's tummy.
 
 The dog rubbed the cats tummy.
+
+The cat scratched the dog. 
