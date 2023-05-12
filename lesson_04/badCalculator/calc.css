@@ -2,14 +2,15 @@
     box-sizing: border-box;
 }
 
-h1,
-h2 {
-    text-align: center;
-    flex:1 0 100%;
-
+h1{
+    text-align:center;
 }
 
-
+h2 {
+    text-align: right;
+    flex:1 0 100%;
+    border:2px black solid;
+}
 
 ul {
     width: 500px;
