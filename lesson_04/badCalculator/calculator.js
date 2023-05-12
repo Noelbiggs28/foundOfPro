@@ -70,7 +70,7 @@ function zero() {
 
 function plus() {
     answer.push(number.join(''))
-    if(answer.join('').slice(-1) !== '+')
+    if(answer.join('').slice(-1) !== '+'&&answer.join('').slice(-1) !== '-'&&answer.join('').slice(-1) !== '*'&&answer.join('').slice(-1) !== '/')
     {
        answer.push('+') 
     }
@@ -80,7 +80,7 @@ function plus() {
 
 function minus() {
     answer.push(number.join(''))
-    if(answer.join('').slice(-1) !== '-')
+    if(answer.join('').slice(-1) !== '+'&&answer.join('').slice(-1) !== '-'&&answer.join('').slice(-1) !== '*'&&answer.join('').slice(-1) !== '/')
     {
        answer.push('-') 
     }
@@ -90,7 +90,7 @@ function minus() {
 
 function times() {
     answer.push(number.join(''))
-    if(answer.join('').slice(-1) !== '*')
+    if(answer.join('').slice(-1) !== '+'&&answer.join('').slice(-1) !== '-'&&answer.join('').slice(-1) !== '*'&&answer.join('').slice(-1) !== '/')
     {
        answer.push('*') 
     }
@@ -100,7 +100,7 @@ function times() {
 
 function divide() {
     answer.push(number.join(''))
-    if(answer.join('').slice(-1) !== '/')
+    if(answer.join('').slice(-1) !== '+'&&answer.join('').slice(-1) !== '-'&&answer.join('').slice(-1) !== '*'&&answer.join('').slice(-1) !== '/')
     {
        answer.push('/') 
     }
