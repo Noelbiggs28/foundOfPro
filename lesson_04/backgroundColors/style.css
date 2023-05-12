@@ -1,0 +1,30 @@
+H1{
+    text-align: center;
+}
+body{
+    background-color: blue;
+}
+.picker{
+    width:15%;
+    border:2px black solid;
+    padding:20px;
+    margin:10px;
+}
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+}
+#green{
+    background-color: green;
+}
+#yellow{
+    background-color: yellow;
+}
+#orange{
+    background-color: orange;
+}
+img{
+    text-align: center;
+}
