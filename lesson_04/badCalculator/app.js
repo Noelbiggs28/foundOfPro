@@ -1,26 +1,27 @@
 let total = 0
+let stringNums = ''
+document.querySelector('#clear').addEventListener('click', clearFunction)
+document.querySelector('#one').addEventListener('click', addOne)
+document.querySelector('#plus').addEventListener('click', add)
+document.querySelector('#equals').addEventListener('click', equals)
 
-document.querySelector('#pumpkin').addEventListener('click', makeZero)
-document.querySelector('#dominosPizza').addEventListener('click', add3)
-document.querySelector('#zebra').addEventListener('click', add9)
-document.querySelector('#cantThinkOfAnything').addEventListener('click', sub2)
-
-function makeZero() {
+function clearFunction() {
+  stringNums = ''
   total = 0
   document.querySelector('#placeToPutResult').innerText = total
 }
 
-function add3() {
-  total = total + 3
-  document.querySelector('#placeToPutResult').innerText = total
+function addOne() {
+  stringNums+='1'
+  document.querySelector('#placeToPutResult').innerText = stringNums
 }
 
-function add9() {
-  total = total + 9
-  document.querySelector('#placeToPutResult').innerHTML = total
+function add() {
+  stringNums+='+'
+  document.querySelector('#placeToPutResult').innerText = stringNums
 }
 
-function sub2() {
-  total = total - 2
-  document.querySelector('#placeToPutResult').innerHTML = total
+function equals() {
+  total = eval(stringNums)
+  document.querySelector('#placeToPutResult').innerText = `total: ${total}`
 }

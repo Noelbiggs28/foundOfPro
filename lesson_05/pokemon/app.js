@@ -6,6 +6,8 @@ async function getFetch() {
 
     let data = await fetch(url)
     let pokemonInfo = await data.json()
-
+    document.querySelector('#name').innerText = data.name
+    document.querySelector('#type').innerText = data.drinks[0].strInstructions
+    document.querySelector('img').src = data.drinks[0].strDrinkThumb
     console.log(pokemonInfo)
 }
