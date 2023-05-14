@@ -6,8 +6,12 @@ async function getFetch() {
 
     let data = await fetch(url)
     let pokemonInfo = await data.json()
-    document.querySelector('#name').innerText = data.name
-    document.querySelector('#type').innerText = data.drinks[0].strInstructions
-    document.querySelector('img').src = data.drinks[0].strDrinkThumb
-    console.log(pokemonInfo)
+    document.querySelector('#name').innerText = pokemonInfo.species.name
+    document.querySelector('#type').innerText = pokemonInfo.types[0].type.name
+    if(document.querySelector('input[id="shiny"]:checked')){
+        document.querySelector('img').src = pokemonInfo.sprites.front_shiny
+    }
+    else{
+        document.querySelector('img').src = pokemonInfo.sprites.front_default
+    }
 }
