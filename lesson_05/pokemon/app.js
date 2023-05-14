@@ -6,6 +6,7 @@ async function getFetch() {
 
     let data = await fetch(url)
     let pokemonInfo = await data.json()
+    console.log(pokemonInfo)
     document.querySelector('#name').innerText = pokemonInfo.species.name
     document.querySelector('#type').innerText = pokemonInfo.types[0].type.name
     if(document.querySelector('input[id="shiny"]:checked')){

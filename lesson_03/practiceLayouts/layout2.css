@@ -1,0 +1,49 @@
+body{
+    background-color: lightgray;
+}
+.container1{
+    display:flex;
+}
+.container1 div{
+    border:1px black solid;
+    padding:10px;
+}
+.container2{
+    display:flex;
+}
+.container2 div{
+    border:1px black solid;
+    padding:10px;
+    height:150px;
+}
+.container3{
+    display:flex;
+}
+.container3 div{
+    border:1px black solid;
+    padding:10px;
+    height:300px;
+}
+.container4{
+    display:flex;
+}
+.container4 div{
+    border:1px black solid;
+    padding:10px;
+}
+.box1{
+    flex:1;
+}
+.box2{
+    flex:1;
+}
+
+.box5{
+    flex:1;
+}
+.box6{
+    flex:1.5;
+}
+.box7{
+    flex:1;
+}
