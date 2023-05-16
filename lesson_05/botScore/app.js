@@ -1,5 +1,25 @@
-localStorage.setItem('count', 1)
+localStorage.setItem('count', 0)
 
-const getStr = localStorage.getItem('count')
+let points = localStorage.getItem('count')
+document.querySelector('#show').innerText = points
+document.querySelector('#addOne').addEventListener('click',addOne)
+document.querySelector('#subOne').addEventListener('click',subOne)
+document.querySelector('#zero').addEventListener('click',zero)
 
-console.log(getStr)
+function addOne(){
+    points++
+    localStorage.setItem('count', points)
+    document.querySelector('#show').innerText = points
+}
+
+function subOne(){
+    points--
+    localStorage.setItem('count',points)
+    document.querySelector('#show').innerText = points
+}
+
+function zero(){
+    points = 0
+    localStorage.setItem('count', points)
+    document.querySelector('#show').innerText = points
+}

@@ -11,12 +11,17 @@
 </head>
 
 <!-- 
-Assignment: Create a button that adds 1 and a button that subtracts 1 to a botScore stored in local storage. The current count in local storage should be mirrored in the DOM. Finally, add a button that resets the count to 0 as well -->
+Assignment: Create a button that adds 1 and a button that subtracts 1 to a botScore stored 
+in local storage. The current count in local storage should be mirrored in the DOM. 
+Finally, add a button that resets the count to 0 on the DOM as well in Local Storage -->
 
 <body>
     <img src="nums.png" alt="Numbers">
 
-    <h4>Show Local Storage Count Here</h4>
+    <h4>Show Local Storage Count Here: <span id="show"></span></h4>
+    <button id="addOne">plus one</button>
+    <button id="subOne">minus one</button>
+    <button id="zero">send to 0</button>
 
     <!-- external JS link -->
     <script type="text/javascript" src="app.js"></script>
