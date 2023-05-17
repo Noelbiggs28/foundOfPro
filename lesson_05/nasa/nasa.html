@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script async type="text/javascript" src="nasa.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>NASA POD</title>
 </head>
 <body>
-    <img>
-    <button type="button" name="new">
-        get photo
-    </button>
+    <h1>
+        Enter New date: 
+        <input type="date" min="1995-06-16" id="newdate" placeholder="yyyy-mm-dd"></input>
+        <button type="submit" id="newbutton">new photo</button>
+    </h1>
+    <h2>NASA POOD</h2>
+    <h3 id="title"></h3>
+    <h4>Date: <span id="date"></span></h4>
+    <img id="url" src="" alt="NASA Picture Of The Day">
+    <p id="explanation"></p>
 </body>
 </html>
