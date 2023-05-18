@@ -9,7 +9,13 @@ async function getFetch() {
     let pokemonInfo = await data.json()
     console.log(pokemonInfo)
     document.querySelector('#name').innerText = pokemonInfo.species.name
-    document.querySelector('#type').innerText = pokemonInfo.types[0].type.name
+    let amount = pokemonInfo.types.length
+    let arr=[]
+    for (let i = 0; i < amount; i++){
+        arr.push(pokemonInfo.types[i].type.name)
+    }
+    string = arr.join(' + ')
+    document.querySelector('#type').innerText = string
     if(isShiny){
         document.querySelector('img').src = pokemonInfo.sprites.front_shiny
     }

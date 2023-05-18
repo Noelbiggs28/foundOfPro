@@ -20,18 +20,21 @@ checkbox next to the get pokemon button that says shiny. If this
   pokemon -->
 
 <body>
-
-    <h1>Which Pokemon?</h1>
-    <input type="text" name="" value="">
-    <button type="button" name="button">Get Pokemon</button>
-
-    <label for="shiny">shiny?</label>
-    <input type="checkbox" id="shiny">
     
-    <h2>Name? <span id="name"></span></h2>
-    <img src="pokemon.jpeg" alt="">
-    <h3>Type? <span id=type></span></h3>
-
+    <div class="question">
+        <h1>Which Pokemon? </h1>
+        <input type="text" placeholder='pokemon name'>
+        <button type="button" name="button">Get Pokemon</button>
+        <label for="shiny">shiny?</label>
+        <input type="checkbox" id="shiny">
+    </div>
+    <div class="results">
+        <img src="pokemon.jpeg" alt="">
+        <div class="words">
+            <h2>Name? <span id="name"></span></h2>
+            <h3>Type? <span id=type></span></h3>
+        </div>
+    </div>
     <!-- external JS link -->
     <script type="text/javascript" src="app.js"></script>
 </body>
