@@ -44,14 +44,24 @@ class LineSegment:
         slope= (y2-y1)/(x2-x1)
         return slope
 
-    def is_parallel_to():
-        pass
+    def is_parallel_to(self, to_line):
+        return self.slope()==to_line.slope()
 
 
 # these go in linesegment
-start = Point(0,5)
-end = Point(1,10)
-line = LineSegment(start,end)
-print(line.slope())
+point_1 = Point(7,4)
+point_2 = Point(-6,18)
+line = LineSegment(point_1,point_2)
+
+point_3 = Point(-2,2)
+point_4 = Point(24, 12)
+line2 = LineSegment(point_3, point_4)
+
+point_5 = Point (9,6)
+point_6 = Point(-4,20)
+line3 = LineSegment(point_5, point_6)
+print(point_1.distance_to(point_2))
 print(line.length())
-print(start.distance_to(end))
+print(line.slope())
+print(line.is_parallel_to(line2))
+print(line.is_parallel_to(line3))
