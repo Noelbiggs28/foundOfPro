@@ -11,7 +11,7 @@ class Taxicab:
     def get_y_coord(self):
         return self._y_coord
 
-    def get_odometer_reading(self):
+    def get_odometer(self):
         return self._odometer_reading
     
     def move_x(self, distance):
@@ -29,4 +29,4 @@ cab.move_x(-1)
 
 print(cab.get_x_coord())
 print(cab.get_y_coord())
-print(cab.get_odometer_reading())
+print(cab.get_odometer())
