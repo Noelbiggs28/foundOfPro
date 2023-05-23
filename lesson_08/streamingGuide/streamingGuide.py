@@ -42,20 +42,28 @@ class StreamingGuide:
     def add_streaming_service(self, streaming_service_object):
         self._streaming_services.append(streaming_service_object.get_name())
 
-    def delete_streaming_service(self, streaming_service_object):
-        ind = self._streaming_services.index(streaming_service_object)
+    def delete_streaming_service(self, streaming_service_name):
+        ind = self._streaming_services.index(streaming_service_name)
         del(self._streaming_services[ind])
 
-    def where_to_watch_movie(self, movie_title):
-        movie_name = movie_title
-        movie_year = movie_title.get_year()
-        watchlist = [movie_name + ' (' + movie_year + ')']
-    #     # for service in self._services: 
-    #     #     if movie in service.get_catalog():
-    #     #         watchlist.append(service.get_name())
-        return watchlist
+    def where_to_watch_movie(self, movie_name):
+        self._movie_title = movie_name
+        self._year = ''
+        has_movie_list = []
+        for service in DemoStreamingGuide._streaming_services:
+            print(service)
+        # watchlist= [movie_name + ' (' + ')', has_movie_list]
+        # return watchlist
 
-guide_1 = StreamingGuide
+
+        
+    #     movie_year = movie_title.get_year()
+    #     watchlist = [movie_name + ' (' + movie_year + ')']
+    # #     # for service in self._services: 
+    # #     #     if movie in service.get_catalog():
+    # #     #         watchlist.append(service.get_name())
+    #     return watchlist
+
 movie_1 = Movie('bugs', 'kids', 'ben', '2008')
 movie_2 = Movie('ants', 'kids', 'steve', '2010')
 netflix = StreamingService('netflix')
@@ -70,4 +78,4 @@ DemoStreamingGuide.add_streaming_service(hulu)
 # DemoStreamingGuide.delete_streaming_service('netflix')
 print(DemoStreamingGuide._streaming_services)
 print(netflix.get_catalog())
-print(guide_1.where_to_watch_movie('ants'))
+print(DemoStreamingGuide.where_to_watch_movie('ants'))
