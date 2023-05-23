@@ -60,6 +60,7 @@ line2 = LineSegment(point_3, point_4)
 point_5 = Point (9,6)
 point_6 = Point(-4,20)
 line3 = LineSegment(point_5, point_6)
+
 print(point_1.distance_to(point_2))
 print(line.length())
 print(line.slope())
