@@ -47,11 +47,12 @@ class StreamingGuide:
         del(self._streaming_services[ind])
 
     def where_to_watch_movie(self, movie_name):
-        self._movie_title = movie_name
-        self._year = ''
-        has_movie_list = []
-        for service in DemoStreamingGuide._streaming_services:
-            print(service)
+        # self._movie_title = movie_name
+        # self._year = ''
+        # has_movie_list = []
+        
+        # for service in DemoStreamingGuide._streaming_services:
+        #     print(service)
         # watchlist= [movie_name + ' (' + ')', has_movie_list]
         # return watchlist
 
