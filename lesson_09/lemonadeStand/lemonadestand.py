@@ -1,6 +1,5 @@
-class InvalidSalesItemError:
-    def __init__(self, message):
-        return None
+class InvalidSalesItemError(Exception):
+    pass
     
 class MenuItem:
     def __init__(self, item_name, item_wholesale_cost, item_selling_price):
@@ -52,7 +51,7 @@ class LemonadeStand:
                 sales_for_day_object = SalesForDay(self._current_day, sales_for_day_dictionary)
             self._sales_for_today.append(sales_for_day_object)
         except:
-            InvalidSalesItemError
+            raise InvalidSalesItemError('the item isnt on the menu')
         
         self._current_day += 1
 
@@ -68,12 +67,10 @@ class LemonadeStand:
 
     def total_sales_for_menu_item(self, menu_item):
         total = 0
-        try:
-            for sales_object in self._sales_for_today:
-                menu = sales_object.get_sales_dict()
-                total += menu[menu_item]
-        except KeyError:
-            pass
+        day = 0
+        while day < self._current_day:
+            total += self.sales_of_menu_item_for_day(day, menu_item)
+            day +=1
         return total
 
 
