@@ -40,43 +40,51 @@ class StreamingGuide:
         self._streaming_services = []
 
     def add_streaming_service(self, streaming_service_object):
-        self._streaming_services.append(streaming_service_object.get_name())
+        self._streaming_services.append(streaming_service_object)
 
     def delete_streaming_service(self, streaming_service_name):
-        ind = self._streaming_services.index(streaming_service_name)
-        del(self._streaming_services[ind])
+        for elem in self._streaming_services:
+            if elem.get_name() == streaming_service_name:
+                self._streaming_services.remove(elem)
 
-    def where_to_watch_movie(self, movie_name):
-        # self._movie_title = movie_name
-        # self._year = ''
-        # has_movie_list = []
-        
-        # for service in DemoStreamingGuide._streaming_services:
-        #     print(service)
-        # watchlist= [movie_name + ' (' + ')', has_movie_list]
-        # return watchlist
+    def where_to_watch_movie(self, movie_title):
+        watch_list = []
+        for streaming_obj in self._streaming_services:
+            streaming_obj_name = streaming_obj.get_name()
+            streaming_service_catalog = streaming_obj.get_catalog()
+            if movie_title in streaming_service_catalog:
+                movie_string = f"{movie_title} ({streaming_service_catalog[movie_title].get_year()})"
+                if movie_string not in watch_list:
+                    watch_list.append(movie_string)
+                watch_list.append(streaming_obj_name)
+        if len(watch_list) == 0:
+            return None
+        return watch_list
 
 
-        
-    #     movie_year = movie_title.get_year()
-    #     watchlist = [movie_name + ' (' + movie_year + ')']
-    # #     # for service in self._services: 
-    # #     #     if movie in service.get_catalog():
-    # #     #         watchlist.append(service.get_name())
-    #     return watchlist
+movie_1 = Movie('The Seventh Seal', 'comedy', 'Ingmar Bergman', 1957)
+movie_2 = Movie('Home Alone', 'tragedy', 'Chris Columbus', 1990)
+movie_3 = Movie('Little Women', 'action thriller', 'Greta Gerwig', 2019)
+movie_4 = Movie('Galaxy Quest', 'historical documents', 'Dean Parisot', 1999)
 
-movie_1 = Movie('bugs', 'kids', 'ben', '2008')
-movie_2 = Movie('ants', 'kids', 'steve', '2010')
-netflix = StreamingService('netflix')
-netflix.add_movie(movie_1)
-netflix.add_movie(movie_2)
-netflix.delete_movie('bugs')
-hulu = StreamingService('hulu')
+stream_serv_1 = StreamingService('Netflick')
+stream_serv_1.add_movie(movie_2)
 
-DemoStreamingGuide = StreamingGuide()
-DemoStreamingGuide.add_streaming_service(netflix)
-DemoStreamingGuide.add_streaming_service(hulu)
-# DemoStreamingGuide.delete_streaming_service('netflix')
-print(DemoStreamingGuide._streaming_services)
-print(netflix.get_catalog())
-print(DemoStreamingGuide.where_to_watch_movie('ants'))
+stream_serv_2 = StreamingService('Hula')
+stream_serv_2.add_movie(movie_1)
+stream_serv_2.add_movie(movie_4)
+stream_serv_2.delete_movie('The Seventh Seal')
+stream_serv_2.add_movie(movie_2)
+
+stream_serv_3 = StreamingService('Dizzy+')
+stream_serv_3.add_movie(movie_4)
+stream_serv_3.add_movie(movie_3)
+stream_serv_3.add_movie(movie_1)
+
+stream_guide = StreamingGuide()
+stream_guide.add_streaming_service(stream_serv_1)
+stream_guide.add_streaming_service(stream_serv_2)
+stream_guide.add_streaming_service(stream_serv_3)
+stream_guide.delete_streaming_service('Hula')
+search_results = stream_guide.where_to_watch_movie('Little Women')
+print(search_results)
